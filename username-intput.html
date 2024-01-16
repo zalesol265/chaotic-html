@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username Input</title>
+    <style>
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<h1>Reverse Username</h1>
+<label for="username">Username:</label>
+<input type="text" id="username" oninput="reverseUsername()">
+
+
+<script>
+    function reverseUsername() {
+        var inputElement = document.getElementById('username');
+        var currentUsername = inputElement.value;
+        
+        if (currentUsername.length > 0) {
+            var mostRecentLetter = currentUsername.slice(-1);
+            inputElement.value = mostRecentLetter + currentUsername.slice(0, -1);
+        }
+    }
+</script>
+
+</body>
+</html>
